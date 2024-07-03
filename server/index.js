@@ -8,8 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connecting to database
-const uri = 
-'mongodb+srv://amrit101:gpb82afFmUNLJ2KG@firsthyperioncluster.xtnxtrv.mongodb.net/testdb?retryWrites=true&w=majority&appName=FirstHyperionCluster';
+const uri = "add your own mongo db database link"
 
 const connectDB = () => {
     try {
