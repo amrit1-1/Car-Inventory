@@ -12,7 +12,7 @@ function Create () {
 
     // This links to my api and adds the car to the database
     const handleAdd = () => {
-        axios.post("https://car-inventory-backend.onrender.com", {
+        axios.post("https://car-inventory-backend.onrender.com/add", {
             model: model, 
             make: make, 
             owner: owner, 
