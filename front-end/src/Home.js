@@ -33,14 +33,14 @@ function Home () {
 
     // Hook to retrieve the cars from the database which updates every time the carData array changes
     useEffect(() => {
-        axios.get('http://localhost:4011/get')
+        axios.get('https://car-inventory-backend.onrender.com/get')
         .then(result => setCarData(result.data))
         .catch(err => console.log(err))
     }, [carData])
 
     // Removes the car from database based on its id
     const handleRemove = (id) => {
-        axios.delete(`http://localhost:4011/delete/${id}`)
+        axios.delete(`https://car-inventory-backend.onrender.com/delete/${id}`)
     }
 
     // This function sets the states with the original car details to initially fill the input fields before the user alters the details
@@ -55,7 +55,7 @@ function Home () {
 
     // This updates the individual chosen car entry with its new, edited details
     const handleUpdate = () => {
-        axios.put(`http://localhost:4011/edit/${editId}`, {
+        axios.put(`https://car-inventory-backend.onrender.com/edit/${editId}`, {
             model: editModel, 
             make: editMake, 
             owner: editOwner, 
@@ -194,7 +194,7 @@ function Home () {
 
     // This function sends the array of selected car ids as well as the new owner name and updates the cars
     const handleUpdatedSelected = () => {
-        axios.post(`http://localhost:4011/multiple`, {
+        axios.post(`https://car-inventory-backend.onrender.com/multiple`, {
             model: editMultiModel,
             make: editMultiMake,
             owner: editMultiOwner,
