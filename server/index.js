@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const carController = require('./controllers/controllers');
 
+require('dotenv').config();
+
+const PORT = process.env.PORT || 4011;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -36,6 +40,6 @@ app.put('/edit/:id', carController.editCar)
 // Retrieves new owner name and all selected cars and changes the owner
 app.post('/multiple', carController.editMulitpleOwners)
 
-app.listen(4011, () => {
-    console.log("Server is running")
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
