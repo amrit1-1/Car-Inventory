@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connecting to database
-const uri = "add your own mongo db database link"
+// Connecting to database - add your own database link here
+const uri = process.env.MONGO_DB;
 
 const connectDB = () => {
     try {
