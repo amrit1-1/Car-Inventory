@@ -7,12 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connecting to database - add your own database link here
-const uri = process.env.MONGO_DB;
+// Connecting to database - add your own database link
 
 const connectDB = () => {
     try {
-        const conn = mongoose.connect(uri);
+        const conn = mongoose.connect(process.env.MONGO_DB);
         console.log(`MongoDB connected`);
     } catch (error) {
         console.error(error);
